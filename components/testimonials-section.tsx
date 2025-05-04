@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import { ChevronLeft, ChevronRight, Star } from "lucide-react"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 // Sample testimonials data
 const testimonials = [
@@ -46,44 +46,47 @@ const testimonials = [
     text: "Our family had an amazing time at Lustro Homes. The Mykonos Escape was spacious enough for all of us, and the kids loved the smart home features. A truly memorable stay!",
     rating: 5,
   },
-]
+];
 
 const TestimonialsSection = () => {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const [autoplay, setAutoplay] = useState(true)
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [autoplay, setAutoplay] = useState(true);
 
   useEffect(() => {
-    if (!autoplay) return
+    if (!autoplay) return;
 
     const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
-    }, 5000)
+      setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 5000);
 
-    return () => clearInterval(interval)
-  }, [autoplay])
+    return () => clearInterval(interval);
+  }, [autoplay]);
 
   const handlePrev = () => {
-    setAutoplay(false)
-    setActiveIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length)
-  }
+    setAutoplay(false);
+    setActiveIndex(
+      (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
+    );
+  };
 
   const handleNext = () => {
-    setAutoplay(false)
-    setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
-  }
+    setAutoplay(false);
+    setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  };
 
   const handleDotClick = (index: number) => {
-    setAutoplay(false)
-    setActiveIndex(index)
-  }
+    setAutoplay(false);
+    setActiveIndex(index);
+  };
 
   return (
-    <section className="section bg-secondary text-white py-20">
+    <section className="section bg-secondary py-20">
       <div className="container">
         <div className="text-center mb-12">
-          <h2 className="section-title text-white">What Our Guests Say</h2>
-          <p className="text-neutral-400 max-w-2xl mx-auto">
-            Don't just take our word for it. Hear from our guests who have experienced the Lustro Homes difference.
+          <h2 className="section-title">What Our Guests Say</h2>
+          <p className="max-w-2xl mx-auto">
+            Don't just take our word for it. Hear from our guests who have
+            experienced the Lustro Homes difference.
           </p>
         </div>
 
@@ -95,7 +98,7 @@ const TestimonialsSection = () => {
               style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             >
               {testimonials.map((testimonial) => (
-                <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
+                <div key={testimonial.id} className="w-full shrink-0 px-4">
                   <div className="bg-secondary-light rounded-lg p-8 text-center">
                     <div className="w-20 h-20 mx-auto mb-4 relative rounded-full overflow-hidden border-2 border-primary">
                       <Image
@@ -111,15 +114,25 @@ const TestimonialsSection = () => {
                         <Star
                           key={i}
                           size={18}
-                          className={`${i < testimonial.rating ? "text-yellow-400 fill-yellow-400" : "text-neutral-600"} mx-0.5`}
+                          className={`${
+                            i < testimonial.rating
+                              ? "text-yellow-400 fill-yellow-400"
+                              : "text-neutral-600"
+                          } mx-0.5`}
                         />
                       ))}
                     </div>
 
-                    <p className="text-neutral-300 mb-6 italic">"{testimonial.text}"</p>
+                    <p className="text-neutral-300 mb-6 italic">
+                      "{testimonial.text}"
+                    </p>
 
-                    <h4 className="font-bold text-lg">{testimonial.name}</h4>
-                    <p className="text-primary text-sm">{testimonial.role}</p>
+                    <h4 className="font-bold text-lg text-neutral-400">
+                      {testimonial.name}
+                    </h4>
+                    <p className="ext-sm text-neutral-400">
+                      {testimonial.role}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -129,7 +142,7 @@ const TestimonialsSection = () => {
           {/* Navigation Buttons */}
           <button
             onClick={handlePrev}
-            className="absolute top-1/2 -left-4 -translate-y-1/2 p-2 rounded-full bg-primary text-white shadow-lg hover:bg-primary-dark transition-colors"
+            className="absolute cursor-pointer top-1/2 -left-4 -translate-y-1/2 p-2 rounded-full bg-primary-dark text-white shadow-lg hover:bg-primary-dark/80 transition-colors"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={24} />
@@ -137,7 +150,7 @@ const TestimonialsSection = () => {
 
           <button
             onClick={handleNext}
-            className="absolute top-1/2 -right-4 -translate-y-1/2 p-2 rounded-full bg-primary text-white shadow-lg hover:bg-primary-dark transition-colors"
+            className="absolute cursor-pointer top-1/2 -right-4 -translate-y-1/2 p-2 rounded-full bg-primary-dark text-white shadow-lg hover:bg-primary-dark/80 transition-colors"
             aria-label="Next testimonial"
           >
             <ChevronRight size={24} />
@@ -149,8 +162,10 @@ const TestimonialsSection = () => {
               <button
                 key={index}
                 onClick={() => handleDotClick(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  index === activeIndex ? "bg-primary w-8" : "bg-neutral-600"
+                className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
+                  index === activeIndex
+                    ? "bg-primary-dark w-8"
+                    : "bg-neutral-600"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
@@ -159,7 +174,7 @@ const TestimonialsSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default TestimonialsSection
+export default TestimonialsSection;

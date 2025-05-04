@@ -37,7 +37,7 @@ const BookingForm = () => {
           id="check-in"
           value={checkIn}
           onChange={(e) => setCheckIn(e.target.value)}
-          className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-hidden focus:ring-2 focus:ring-primary"
           required
         />
       </div>
@@ -51,7 +51,7 @@ const BookingForm = () => {
           id="check-out"
           value={checkOut}
           onChange={(e) => setCheckOut(e.target.value)}
-          className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-hidden focus:ring-2 focus:ring-primary"
           required
         />
       </div>
@@ -64,7 +64,7 @@ const BookingForm = () => {
           id="guests"
           value={guests}
           onChange={(e) => setGuests(Number.parseInt(e.target.value))}
-          className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-hidden focus:ring-2 focus:ring-primary"
         >
           {[1, 2, 3, 4].map((num) => (
             <option key={num} value={num}>

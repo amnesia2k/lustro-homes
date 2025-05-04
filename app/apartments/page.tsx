@@ -119,7 +119,7 @@ export default function ApartmentsPage() {
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30 flex items-center justify-center">
+        <div className="absolute inset-0 bg-linear-to-b from-black/60 to-black/30 flex items-center justify-center">
           <div className="text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Apartments</h1>
             <p className="text-xl max-w-2xl mx-auto">Discover our collection of uniquely themed luxury apartments</p>

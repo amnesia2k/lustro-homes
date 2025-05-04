@@ -59,7 +59,7 @@ export default function RoomDetailPage({ params }: { params: { id: string } }) {
       {/* Room Header */}
       <section className="relative h-[50vh] min-h-[400px] w-full">
         <Image src={room.images[0] || "/placeholder.svg"} alt={room.name} fill priority className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30 flex items-end">
+        <div className="absolute inset-0 bg-linear-to-b from-black/60 to-black/30 flex items-end">
           <div className="container pb-12">
             <div className="text-white max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">{room.name}</h1>
@@ -149,7 +149,7 @@ export default function RoomDetailPage({ params }: { params: { id: string } }) {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {room.amenities.map((amenity, index) => (
                     <div key={index} className="flex items-center">
-                      <Check className="text-primary mr-2 flex-shrink-0" size={20} />
+                      <Check className="text-primary mr-2 shrink-0" size={20} />
                       <span>{amenity}</span>
                     </div>
                   ))}
@@ -159,7 +159,7 @@ export default function RoomDetailPage({ params }: { params: { id: string } }) {
               {/* Location */}
               <div className="mt-12">
                 <h2 className="text-2xl font-bold mb-6">Location</h2>
-                <div className="aspect-[16/9] w-full bg-neutral-200 rounded-lg overflow-hidden">
+                <div className="aspect-16/9 w-full bg-neutral-200 rounded-lg overflow-hidden">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.0723458861087!2d3.3851099!3d6.5156478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8cf3fae871f1%3A0x33fc1ca3c387ebe8!2sAkoka%2C%20Yaba%2C%20Lagos!5e0!3m2!1sen!2sng!4v1651234567890!5m2!1sen!2sng"
                     width="100%"

@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Home, Menu, X } from "lucide-react";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setScrolled(true)
+        setScrolled(true);
       } else {
-        setScrolled(false)
+        setScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   return (
     <header
@@ -33,9 +33,18 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="relative z-10">
-          <div className="flex items-center">
-            <span className="text-2xl font-bold text-primary">LUSTRO</span>
-            <span className={`text-2xl font-light ${scrolled ? "text-secondary" : "text-white"}`}>HOMES</span>
+          <div className="flex items-center gap-x-1">
+            <span className="flex items-center gap-x-1 text-2xl font-bold text-primary">
+              <Home size={30} />
+              LUSTRO
+            </span>
+            <span
+              className={`text-2xl font-light ${
+                scrolled ? "text-secondary" : "text-white"
+              }`}
+            >
+              HOMES
+            </span>
           </div>
         </Link>
 
@@ -52,17 +61,30 @@ const Navbar = () => {
               {item}
             </Link>
           ))}
-          <Link href="/book-now" className="btn btn-primary">
+          <Link
+            href="/book-now"
+            className="px-5 py-3 rounded-full transition-all duration-300 font-medium bg-[#b3941f] text-white hover:bg-[#b3941f]/80 cursor-pointer"
+          >
             Book Now
           </Link>
         </nav>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden relative z-10" onClick={toggleMenu} aria-label="Toggle menu">
+        <button
+          className="md:hidden relative z-10"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
           {isOpen ? (
-            <X className={scrolled ? "text-secondary" : "text-white"} size={24} />
+            <X
+              className={scrolled ? "text-secondary" : "text-white"}
+              size={24}
+            />
           ) : (
-            <Menu className={scrolled ? "text-secondary" : "text-white"} size={24} />
+            <Menu
+              className={scrolled ? "text-secondary" : "text-white"}
+              size={24}
+            />
           )}
         </button>
       </div>
@@ -71,24 +93,30 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden fixed inset-0 bg-secondary z-40 animate-fade-in">
           <div className="flex flex-col items-center justify-center h-full space-y-8">
-            {["Home", "Apartments", "About", "Gallery", "Contact"].map((item) => (
-              <Link
-                key={item}
-                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                className="text-white text-2xl font-medium hover:text-primary transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {item}
-              </Link>
-            ))}
-            <Link href="/book-now" className="btn btn-primary mt-4" onClick={() => setIsOpen(false)}>
+            {["Home", "Apartments", "About", "Gallery", "Contact"].map(
+              (item) => (
+                <Link
+                  key={item}
+                  href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  className="text-white text-2xl font-medium hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item}
+                </Link>
+              )
+            )}
+            <Link
+              href="/book-now"
+              className="px-5 py-3 rounded-full transition-all duration-300 font-medium bg-[#b3941f] text-white hover:bg-[#b3941f]/80 cursor-pointer"
+              onClick={() => setIsOpen(false)}
+            >
               Book Now
             </Link>
           </div>
         </div>
       )}
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

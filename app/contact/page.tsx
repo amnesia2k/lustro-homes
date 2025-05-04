@@ -52,7 +52,7 @@ export default function ContactPage() {
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30 flex items-center justify-center">
+        <div className="absolute inset-0 bg-linear-to-b from-black/60 to-black/30 flex items-center justify-center">
           <div className="text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
             <p className="text-xl max-w-2xl mx-auto">
@@ -127,7 +127,7 @@ export default function ContactPage() {
               {/* Map */}
               <div className="mt-8">
                 <h3 className="font-bold text-lg mb-4">Find Us on the Map</h3>
-                <div className="aspect-[4/3] w-full bg-neutral-200 rounded-lg overflow-hidden">
+                <div className="aspect-4/3 w-full bg-neutral-200 rounded-lg overflow-hidden">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.0723458861087!2d3.3851099!3d6.5156478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8cf3fae871f1%3A0x33fc1ca3c387ebe8!2sAkoka%2C%20Yaba%2C%20Lagos!5e0!3m2!1sen!2sng!4v1651234567890!5m2!1sen!2sng"
                     width="100%"
@@ -160,7 +160,7 @@ export default function ContactPage() {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-hidden focus:ring-2 focus:ring-primary"
                         required
                       />
                     </div>
@@ -176,7 +176,7 @@ export default function ContactPage() {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                          className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-hidden focus:ring-2 focus:ring-primary"
                           required
                         />
                       </div>
@@ -191,7 +191,7 @@ export default function ContactPage() {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                          className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-hidden focus:ring-2 focus:ring-primary"
                         />
                       </div>
                     </div>
@@ -205,7 +205,7 @@ export default function ContactPage() {
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-hidden focus:ring-2 focus:ring-primary"
                         required
                       >
                         <option value="">Select a subject</option>
@@ -227,7 +227,7 @@ export default function ContactPage() {
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="w-full px-4 py-2 border border-neutral-300 rounded-md focus:outline-hidden focus:ring-2 focus:ring-primary"
                         required
                       ></textarea>
                     </div>

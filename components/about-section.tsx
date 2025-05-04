@@ -1,6 +1,6 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Check } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { Check } from "lucide-react";
 
 const AboutSection = () => {
   const features = [
@@ -10,7 +10,7 @@ const AboutSection = () => {
     "High-speed WiFi and smart home features",
     "Dedicated concierge service",
     "Premium amenities and toiletries",
-  ]
+  ];
 
   return (
     <section className="section">
@@ -34,9 +34,9 @@ const AboutSection = () => {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute -top-6 -left-6 bg-primary text-white p-6 rounded-lg shadow-xl hidden md:block">
-                <p className="text-2xl font-bold">5+</p>
-                <p className="text-sm">Years of Excellence</p>
+              <div className="absolute -top-6 -left-6 bg-primary p-6 rounded-lg shadow-xl hidden md:block">
+                <p className="text-2xl font-bold">1</p>
+                <p className="text-sm">Year of Excellence</p>
               </div>
             </div>
           </div>
@@ -45,18 +45,20 @@ const AboutSection = () => {
             <span className="text-primary font-medium">About Us</span>
             <h2 className="section-title">Redefined Hospitality</h2>
             <p className="text-neutral-600 mb-6">
-              At Lustro Homes, we believe in creating more than just a place to stay. We craft experiences that blend
-              luxury, comfort, and unique design inspired by the world's most exotic destinations.
+              At Lustro Homes, we believe in creating more than just a place to
+              stay. We craft experiences that blend luxury, comfort, and unique
+              design inspired by the world's most exotic destinations.
             </p>
             <p className="text-neutral-600 mb-8">
-              Located in the vibrant neighborhood of Akoka, Yaba, our luxury short-stay apartments offer the perfect
-              base for exploring Lagos while providing a tranquil retreat to return to.
+              Located in the vibrant neighborhood of Akoka, Yaba, our luxury
+              short-stay apartments offer the perfect base for exploring Lagos
+              while providing a tranquil retreat to return to.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center">
-                  <Check className="text-primary mr-2 flex-shrink-0" size={20} />
+                  <Check className="text-primary mr-2 shrink-0" size={20} />
                   <span className="text-neutral-700">{feature}</span>
                 </div>
               ))}
@@ -69,7 +71,7 @@ const AboutSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AboutSection
+export default AboutSection;
