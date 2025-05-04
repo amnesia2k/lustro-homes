@@ -2,6 +2,7 @@
   "name": "lustro-homes",
   "version": "1.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -26,12 +27,15 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4.1.5",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "eslint": "^9.26.0",
     "postcss": "^8",
     "tailwindcss": "^4.1.5",
-    "typescript": "^5"
+    "typescript": "^5",
+    "typescript-eslint": "^8.31.1"
   }
 }
