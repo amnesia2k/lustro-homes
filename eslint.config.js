@@ -9,7 +9,10 @@ export default tseslint.config(
   {
     ignores: [".next"],
   },
-  ...compat.extends("next/core-web-vitals"),
+  {
+    // 👇 Wrap the compat result inside an object
+    ...compat.extends("next/core-web-vitals")[0], // FlatCompat returns an array
+  },
   {
     files: ["**/*.ts", "**/*.tsx"],
     extends: [

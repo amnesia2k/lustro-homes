@@ -32,6 +32,8 @@
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
     "eslint": "^9.26.0",
     "postcss": "^8",
     "tailwindcss": "^4.1.5",
