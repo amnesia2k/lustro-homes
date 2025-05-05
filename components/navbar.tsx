@@ -77,7 +77,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {["Home", "Apartments", "About", "Gallery", "Contact"].map((item) => (
+          {["Home", "Apartments", "About", "Contact"].map((item) => (
             <Link
               key={item}
               href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
@@ -134,18 +134,16 @@ const Navbar = () => {
 
         <div className="flex flex-col px-6 pb-6">
           <div className="flex flex-col space-y-6 mb-8">
-            {["Home", "Apartments", "About", "Gallery", "Contact"].map(
-              (item) => (
-                <Link
-                  key={item}
-                  href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="text-secondary text-xl font-medium hover:text-primary transition-colors border-b border-neutral-200 pb-2"
-                  onClick={toggleMenu}
-                >
-                  {item}
-                </Link>
-              )
-            )}
+            {["Home", "Apartments", "About", "Contact"].map((item) => (
+              <Link
+                key={item}
+                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                className="text-secondary text-xl font-medium hover:text-primary transition-colors border-b border-neutral-200 pb-2"
+                onClick={toggleMenu}
+              >
+                {item}
+              </Link>
+            ))}
           </div>
           <Link
             href="/book-now"

@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import Image from "next/image"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { useState } from "react";
+import Image from "next/image";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -13,23 +13,29 @@ export default function ContactPage() {
     phone: "",
     subject: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitMessage, setSubmitMessage] = useState("")
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
     setTimeout(() => {
-      setIsSubmitting(false)
-      setSubmitMessage("Thank you for your message! We will get back to you shortly.")
+      setIsSubmitting(false);
+      setSubmitMessage(
+        "Thank you for your message! We will get back to you shortly."
+      );
       // Reset form
       setFormData({
         name: "",
@@ -37,9 +43,9 @@ export default function ContactPage() {
         phone: "",
         subject: "",
         message: "",
-      })
-    }, 1500)
-  }
+      });
+    }, 1500);
+  };
 
   return (
     <>
@@ -56,7 +62,8 @@ export default function ContactPage() {
           <div className="text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
             <p className="text-xl max-w-2xl mx-auto">
-              We'd love to hear from you. Reach out to us with any questions or inquiries.
+              We'd love to hear from you. Reach out to us with any questions or
+              inquiries.
             </p>
           </div>
         </div>
@@ -70,8 +77,9 @@ export default function ContactPage() {
             <div>
               <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
               <p className="text-neutral-600 mb-8">
-                Whether you have a question about our apartments, want to make a reservation, or are interested in
-                partnering with us, we're here to help.
+                Whether you have a question about our apartments, want to make a
+                reservation, or are interested in partnering with us, we're here
+                to help.
               </p>
 
               <div className="space-y-6">
@@ -81,7 +89,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg">Our Location</h3>
-                    <p className="text-neutral-600">Akoka, Yaba, Lagos, Nigeria</p>
+                    <p className="text-neutral-600">
+                      Akoka, Yaba, Lagos, Nigeria
+                    </p>
                   </div>
                 </div>
 
@@ -92,7 +102,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-lg">Phone Number</h3>
                     <p className="text-neutral-600">
-                      <a href="tel:+2348012345678" className="hover:text-primary transition-colors">
+                      <a
+                        href="tel:+2348012345678"
+                        className="hover:text-primary transition-colors"
+                      >
                         +234 801 234 5678
                       </a>
                     </p>
@@ -106,7 +119,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-lg">Email Address</h3>
                     <p className="text-neutral-600">
-                      <a href="mailto:info@lustrohomes.com" className="hover:text-primary transition-colors">
+                      <a
+                        href="mailto:info@lustrohomes.com"
+                        className="hover:text-primary transition-colors"
+                      >
                         info@lustrohomes.com
                       </a>
                     </p>
@@ -119,7 +135,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg">Office Hours</h3>
-                    <p className="text-neutral-600">Monday - Sunday: 8:00 AM - 8:00 PM</p>
+                    <p className="text-neutral-600">
+                      Monday - Sunday: 8:00 AM - 8:00 PM
+                    </p>
                   </div>
                 </div>
               </div>
@@ -129,7 +147,7 @@ export default function ContactPage() {
                 <h3 className="font-bold text-lg mb-4">Find Us on the Map</h3>
                 <div className="aspect-4/3 w-full bg-neutral-200 rounded-lg overflow-hidden">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.0723458861087!2d3.3851099!3d6.5156478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8cf3fae871f1%3A0x33fc1ca3c387ebe8!2sAkoka%2C%20Yaba%2C%20Lagos!5e0!3m2!1sen!2sng!4v1651234567890!5m2!1sen!2sng"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.9486936549374!2d3.382151273117476!3d6.52816452311299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8d03dcff0961%3A0x47fb6aa7a57a3b2!2s37%20Ibukun%20Olu%20St%2C%20Akoka%2C%20Lagos%20102216%2C%20Lagos!5e0!3m2!1sen!2sng!4v1746447412585!5m2!1sen!2sng"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -147,11 +165,16 @@ export default function ContactPage() {
                 <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
 
                 {submitMessage ? (
-                  <div className="p-4 bg-green-50 text-green-800 rounded-md mb-4">{submitMessage}</div>
+                  <div className="p-4 bg-green-50 text-green-800 rounded-md mb-4">
+                    {submitMessage}
+                  </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-1">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-neutral-700 mb-1"
+                      >
                         Your Name *
                       </label>
                       <input
@@ -167,7 +190,10 @@ export default function ContactPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-1">
+                        <label
+                          htmlFor="email"
+                          className="block text-sm font-medium text-neutral-700 mb-1"
+                        >
                           Email Address *
                         </label>
                         <input
@@ -182,7 +208,10 @@ export default function ContactPage() {
                       </div>
 
                       <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-neutral-700 mb-1">
+                        <label
+                          htmlFor="phone"
+                          className="block text-sm font-medium text-neutral-700 mb-1"
+                        >
                           Phone Number
                         </label>
                         <input
@@ -197,7 +226,10 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-neutral-700 mb-1">
+                      <label
+                        htmlFor="subject"
+                        className="block text-sm font-medium text-neutral-700 mb-1"
+                      >
                         Subject *
                       </label>
                       <select
@@ -210,7 +242,9 @@ export default function ContactPage() {
                       >
                         <option value="">Select a subject</option>
                         <option value="Booking Inquiry">Booking Inquiry</option>
-                        <option value="General Question">General Question</option>
+                        <option value="General Question">
+                          General Question
+                        </option>
                         <option value="Feedback">Feedback</option>
                         <option value="Partnership">Partnership</option>
                         <option value="Other">Other</option>
@@ -218,7 +252,10 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-1">
+                      <label
+                        htmlFor="message"
+                        className="block text-sm font-medium text-neutral-700 mb-1"
+                      >
                         Your Message *
                       </label>
                       <textarea
@@ -232,7 +269,11 @@ export default function ContactPage() {
                       ></textarea>
                     </div>
 
-                    <button type="submit" className="w-full btn btn-primary" disabled={isSubmitting}>
+                    <button
+                      type="submit"
+                      className="w-full btn btn-primary"
+                      disabled={isSubmitting}
+                    >
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </button>
                   </form>
@@ -243,5 +284,5 @@ export default function ContactPage() {
         </div>
       </section>
     </>
-  )
+  );
 }
