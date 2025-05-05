@@ -1,35 +1,40 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
+import { useState } from "react";
 
 const BookingForm = () => {
-  const [checkIn, setCheckIn] = useState("")
-  const [checkOut, setCheckOut] = useState("")
-  const [guests, setGuests] = useState(1)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [message, setMessage] = useState("")
+  const [checkIn, setCheckIn] = useState("");
+  const [checkOut, setCheckOut] = useState("");
+  const [guests, setGuests] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
     setTimeout(() => {
-      setIsSubmitting(false)
-      setMessage("Booking request sent! We will contact you shortly to confirm your reservation.")
+      setIsSubmitting(false);
+      setMessage(
+        "Booking request sent! We will contact you shortly to confirm your reservation."
+      );
       // Reset form
-      setCheckIn("")
-      setCheckOut("")
-      setGuests(1)
-    }, 1500)
-  }
+      setCheckIn("");
+      setCheckOut("");
+      setGuests(1);
+    }, 1500);
+  };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label htmlFor="check-in" className="block text-sm font-medium text-neutral-700 mb-1">
+        <label
+          htmlFor="check-in"
+          className="block text-sm font-medium text-neutral-700 mb-1"
+        >
           Check-in Date
         </label>
         <input
@@ -43,7 +48,10 @@ const BookingForm = () => {
       </div>
 
       <div>
-        <label htmlFor="check-out" className="block text-sm font-medium text-neutral-700 mb-1">
+        <label
+          htmlFor="check-out"
+          className="block text-sm font-medium text-neutral-700 mb-1"
+        >
           Check-out Date
         </label>
         <input
@@ -57,7 +65,10 @@ const BookingForm = () => {
       </div>
 
       <div>
-        <label htmlFor="guests" className="block text-sm font-medium text-neutral-700 mb-1">
+        <label
+          htmlFor="guests"
+          className="block text-sm font-medium text-neutral-700 mb-1"
+        >
           Guests
         </label>
         <select
@@ -74,13 +85,21 @@ const BookingForm = () => {
         </select>
       </div>
 
-      <button type="submit" className="w-full btn btn-primary" disabled={isSubmitting}>
+      <button
+        type="submit"
+        className="w-full px-5 py-3 rounded-full transition-all duration-300 font-medium bg-[#b3941f] text-white hover:bg-[#b3941f]/80 cursor-pointer text-center"
+        disabled={isSubmitting}
+      >
         {isSubmitting ? "Processing..." : "Book Now"}
       </button>
 
-      {message && <div className="p-3 bg-green-50 text-green-800 rounded-md text-sm">{message}</div>}
+      {message && (
+        <div className="p-3 bg-green-50 text-green-800 rounded-md text-sm">
+          {message}
+        </div>
+      )}
     </form>
-  )
-}
+  );
+};
 
-export default BookingForm
+export default BookingForm;

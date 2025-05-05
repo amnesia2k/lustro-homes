@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { Instagram, Heart, MessageCircle } from "lucide-react"
+import { useState } from "react";
+import Image from "next/image";
+import { Instagram, Heart, MessageCircle } from "lucide-react";
 
 // Sample Instagram posts data
 const instagramPosts = [
@@ -11,7 +11,8 @@ const instagramPosts = [
     image: "/placeholder.svg?height=600&width=600",
     likes: 245,
     comments: 18,
-    caption: "Experience luxury living at our Beverly Hills Suite ✨ #LustroHomes #LuxuryLiving",
+    caption:
+      "Experience luxury living at our Beverly Hills Suite ✨ #LustroHomes #LuxuryLiving",
   },
   {
     id: 2,
@@ -25,14 +26,16 @@ const instagramPosts = [
     image: "/placeholder.svg?height=600&width=600",
     likes: 312,
     comments: 24,
-    caption: "Elegance in every detail at the Monte Carlo Luxury apartment 🥂 #LustroExperience",
+    caption:
+      "Elegance in every detail at the Monte Carlo Luxury apartment 🥂 #LustroExperience",
   },
   {
     id: 4,
     image: "/placeholder.svg?height=600&width=600",
     likes: 276,
     comments: 21,
-    caption: "Tropical vibes at our Seychelles Paradise 🌴 #LustroHomes #LuxuryStay",
+    caption:
+      "Tropical vibes at our Seychelles Paradise 🌴 #LustroHomes #LuxuryStay",
   },
   {
     id: 5,
@@ -48,10 +51,10 @@ const instagramPosts = [
     comments: 19,
     caption: "Cozy evenings at Lustro Homes 🕯️ #LuxuryExperience #ShortLet",
   },
-]
+];
 
 const InstagramFeed = () => {
-  const [hoveredPost, setHoveredPost] = useState<number | null>(null)
+  const [hoveredPost, setHoveredPost] = useState<number | null>(null);
 
   return (
     <section className="section">
@@ -59,17 +62,17 @@ const InstagramFeed = () => {
         <div className="text-center mb-12">
           <h2 className="section-title">Follow Us on Instagram</h2>
           <p className="text-neutral-600 max-w-2xl mx-auto">
-            Stay updated with our latest offerings and get a glimpse of the Lustro Homes experience through our
-            Instagram feed.
+            Stay updated with our latest offerings and get a glimpse of the
+            Lustro Homes experience through our Instagram feed.
           </p>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/lustro_lagos?igsh=ZHNjeTE5dDNyZHQz"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center text-primary font-medium mt-2 hover:underline"
           >
             <Instagram size={18} className="mr-1" />
-            @lustrohomes
+            @lustro_lagos
           </a>
         </div>
 
@@ -107,14 +110,16 @@ const InstagramFeed = () => {
                     <span>{post.comments}</span>
                   </div>
                 </div>
-                <p className="text-white text-sm text-center line-clamp-3">{post.caption}</p>
+                <p className="text-white text-sm text-center line-clamp-3">
+                  {post.caption}
+                </p>
               </div>
             </a>
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default InstagramFeed
+export default InstagramFeed;
